@@ -18,7 +18,7 @@ hash git >/dev/null && /usr/bin/env git clone https://github.com/adibis/etc.git 
 }
 
 echo "\033[0;34mTime to change your default shell to zsh!\033[0m"
-if which tcsh 2> /dev/null
+if which zsh 2> /dev/null
 then
     chsh -s `which zsh`
 else
