@@ -26,3 +26,5 @@ buc() {
     test -d "$dest" && mv -v "$dest" "$file.orig"
     mv -v "$file" "$dest"
   done
+}
+
