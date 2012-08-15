@@ -2,6 +2,9 @@
 
 # TODO - Get an optional directory path as an argument - create that directory and install there.
 
+SCRIPT_DIRECTORY=$(cd `dirname $0` && pwd)
+ROOT_DIRECTORY="$(dirname "$SCRIPT_DIRECTORY")"
+
 # Proceed only if the ~/.etc directory does not exist.
 if [ -d $HOME/.etc ]
 then
@@ -37,5 +40,8 @@ echo "\033[0;33m"'  \___  >__|  \___  >  '"\033[0m"
 echo "\033[0;33m"'      \/          \/   '"\033[0m"
 echo "\033[0;33m"'                       '"\033[0m"
 
-echo "\n\n \033[0;33m....is now installed.\033[0m"
+echo "\n \033[0;33m....is now installed.\033[0m"
+echo "\n\n \033[0;33mCreating the required symlinks.\033[0m"
+
+sh $SCRIPT_DIRECTORY/make_symlinks.sh
 
