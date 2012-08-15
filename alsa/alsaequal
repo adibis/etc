@@ -1,3 +1,6 @@
+# Copy this file to /etc/asoundrc OR ~/.asoundrc
+# Use alsamixer -D equal to configure equalizer
+
 ctl.equal {
     type equal
 }
