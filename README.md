@@ -1,38 +1,6 @@
-.
-├── README.md
-├── git
-│   ├── README.md
-│   ├── gitconfig
-│   └── gitignore
-├── mpd
-│   ├── README.md
-│   ├── mpd.conf
-│   ├── mpdscribble.conf
-│   └── ncmpcpp
-│       └── config
-├── tmux
-│   ├── README.md
-│   └── tmux.conf
-├── xterm
-│   ├── README.md
-│   └── Xresources
-└── zsh
-    ├── README.md
-    ├── alias.d
-    │   ├── dir.sh
-    │   ├── shell.sh
-    │   └── utils.sh
-    ├── function.d
-    │   ├── cuttail.sh
-    │   ├── extract.sh
-    │   ├── ffind.sh
-    │   ├── fiexec.sh
-    │   ├── fstr.sh
-    │   ├── hinfo.sh
-    │   ├── lowercase.sh
-    │   ├── mkcd.sh
-    │   ├── rot13.sh
-    │   └── swapfiles.sh
-    └── zshrc
+# etc
+This is a collection of the configuration files for some of the tools that I use on my personal system.
+Feel free to fork and make changes.
 
-8 directories, 27 files
+If you think something you write might be useful, please submit a pull request.
+
