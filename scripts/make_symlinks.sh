@@ -5,14 +5,14 @@
 SCRIPT_DIRECTORY=$(cd `dirname $0` && pwd)
 ROOT_DIRECTORY="$(dirname "$SCRIPT_DIRECTORY")"
 
-echo "\033[0;33m"'\nThe script will now try to create symlinks for all the components.'"\033[0m"
-echo "\033[0;33m"'Please answer the following questions.\n'"\033[0m"
+printf "\033[0;33m"'\nThe script will now try to create symlinks for all the components.'"\033[0m"
+printf "\033[0;33m"'\nPlease answer the following questions.\n'"\033[0m"
 
-echo "\033[0;34m"'Do you want to install zsh configuration? (Y/N) (yes)'"\033[0m"
+printf "\033[0;34m"'\nDo you want to install zsh configuration? (Y/N) (yes)'"\033[0m"
 read line
 if [ "$line" = Y ] || [ "$line" = y ] || [ "$line" = "" ]; then
 
-    echo "\033[0;32m"'\nBacking up the current config files.'"\033[0m"
+    printf "\033[0;32m"'\nBacking up the current config files.\n'"\033[0m"
     if [ ! -f $HOME/.zshrc.pre-etc ]
     then
         mv -v $HOME/.zshrc $HOME/.zshrc.pre-etc 2> /dev/null
@@ -34,14 +34,14 @@ if [ "$line" = Y ] || [ "$line" = y ] || [ "$line" = "" ]; then
         rm -rvf $HOME/.function.d
     fi
 
-    echo "\033[0;32m"'\nInstalling new config files.'"\033[0m"
+    printf "\033[0;32m"'\nInstalling new config files.\n'"\033[0m"
     ln -sv $ROOT_DIRECTORY/zsh/zshrc $HOME/.zshrc
 	ln -sv $ROOT_DIRECTORY/zsh/alias.d $HOME/.alias.d
 	ln -sv $ROOT_DIRECTORY/zsh/function.d $HOME/.function.d
 
     if [ ! -d $HOME/.oh-my-zsh ]
     then
-        echo "\033[0;34m"'\nDo you want to install oh-my-zsh? (Y/N) (yes)'"\033[0m"
+        printf "\033[0;34m"'\nDo you want to install oh-my-zsh? (Y/N) (yes)'"\033[0m"
         read line
         if [ "$line" = Y ] || [ "$line" = y ] || [ "$line" = "" ]; then
             git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
@@ -49,11 +49,11 @@ if [ "$line" = Y ] || [ "$line" = y ] || [ "$line" = "" ]; then
     fi
 fi
 
-echo "\033[0;34m"'Do you want to install git configuration? (Y/N) (yes)'"\033[0m"
+printf "\033[0;34m"'\nDo you want to install git configuration? (Y/N) (yes)'"\033[0m"
 read line
 if [ "$line" = Y ] || [ "$line" = y ] || [ "$line" = "" ]; then
 
-    echo "\033[0;32m"'\nBacking up the current config files.'"\033[0m"
+    printf "\033[0;32m"'\nBacking up the current config files.\n'"\033[0m"
     if [ ! -f $HOME/.gitconfig.pre-etc ]
     then
         mv -v $HOME/.gitconfig $HOME/.gitconfig.pre-etc 2> /dev/null
@@ -61,16 +61,16 @@ if [ "$line" = Y ] || [ "$line" = y ] || [ "$line" = "" ]; then
         rm -rvf $HOME/.gitconfig
     fi
 
-    echo "\033[0;32m"'\nInstalling new config files.'"\033[0m"
+    printf "\033[0;32m"'\nInstalling new config files.\n'"\033[0m"
 	ln -sv $ROOT_DIRECTORY/git/gitconfig $HOME/.gitconfig
 
 fi
 
-echo "\033[0;34m"'Do you want to install tmux configuration? (Y/N) (yes)'"\033[0m"
+printf "\033[0;34m"'\nDo you want to install tmux configuration? (Y/N) (yes)'"\033[0m"
 read line
 if [ "$line" = Y ] || [ "$line" = y ] || [ "$line" = "" ]; then
 
-    echo "\033[0;32m"'\nBacking up the current config files.'"\033[0m"
+    printf "\033[0;32m"'\nBacking up the current config files.\n'"\033[0m"
     if [ ! -f $HOME/.tmux.conf.pre-etc ]
     then
         mv -v $HOME/.tmux.conf $HOME/.tmux.conf.pre-etc 2> /dev/null
@@ -78,16 +78,16 @@ if [ "$line" = Y ] || [ "$line" = y ] || [ "$line" = "" ]; then
         rm -rvf $HOME/.tmux.conf
     fi
 
-    echo "\033[0;32m"'\nInstalling new config files.'"\033[0m"
+    printf "\033[0;32m"'\nInstalling new config files.\n'"\033[0m"
 	ln -sv $ROOT_DIRECTORY/tmux/tmux.conf $HOME/.tmux.conf
 
 fi
 
-echo "\033[0;34m"'Do you want to install Xresources file? (Y/N) (yes)'"\033[0m"
+printf "\033[0;34m"'\nDo you want to install Xresources file? (Y/N) (yes)'"\033[0m"
 read line
 if [ "$line" = Y ] || [ "$line" = y ] || [ "$line" = "" ]; then
 
-    echo "\033[0;32m"'\nBacking up the current config files.'"\033[0m"
+    printf "\033[0;32m"'\nBacking up the current config files.\n'"\033[0m"
     if [ ! -f $HOME/.Xresources.pre-etc ]
     then
         mv -v $HOME/.Xresources $HOME/.Xresources.pre-etc 2> /dev/null
@@ -101,7 +101,7 @@ if [ "$line" = Y ] || [ "$line" = y ] || [ "$line" = "" ]; then
         rm -rvf $HOME/.Xdefaults
     fi
 
-    echo "\033[0;32m"'\nInstalling new config files.'"\033[0m"
+    printf "\033[0;32m"'\nInstalling new config files.\n'"\033[0m"
 	ln -sv $ROOT_DIRECTORY/xterm/Xresources $HOME/.Xresources
 	ln -sv $ROOT_DIRECTORY/xterm/Xresources $HOME/.Xdefaults
 

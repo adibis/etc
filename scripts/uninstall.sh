@@ -6,7 +6,7 @@
 SCRIPT_DIRECTORY=$(cd `dirname $0` && pwd)
 ROOT_DIRECTORY="$(dirname "$SCRIPT_DIRECTORY")"
 
-echo "Removing ~/.etc"
+printf "\033[0;31m"'\nRemoving ~/.etc...\n'"\033[0m"
 if [ -d $HOME/.etc ]
 then
   rm -rf $HOME/.etc
@@ -14,5 +14,5 @@ fi
 
 sh $SCRIPT_DIRECTORY/remove_symlinks.sh
 
-echo "Thanks for trying out etc. It's been uninstalled."
+printf "\033[0;33m"'\n\nThanks for trying out etc. It has been uninstalled.\n'"\033[0m"
 

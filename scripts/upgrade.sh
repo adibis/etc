@@ -1,8 +1,11 @@
 #!/bin/sh
 
+SCRIPT_DIRECTORY=$(cd `dirname $0` && pwd)
+ROOT_DIRECTORY="$(dirname "$SCRIPT_DIRECTORY")"
 CURRENT_PATH=`pwd`
+
 printf '\033[0;34m%s\033[0m\n' "Upgrading the repository"
-cd ./../
+cd $ROOT_DIRECTORY
 
 if git pull origin master 2> /dev/null
 then
