@@ -10,7 +10,7 @@ echo "\033[0;33m"'Please answer the following questions.\n'"\033[0m"
 
 echo "\033[0;34m"'Do you want to install zsh configuration? (Y/N) (yes)'"\033[0m"
 read line
-if [ "$line" = Y ] || [ "$line" = y ]; then
+if [ "$line" = Y ] || [ "$line" = y ] || [ "$line" = "" ]; then
 
     echo "\033[0;32m"'\nBacking up the current config files.'"\033[0m"
     if [ ! -f $HOME/.zshrc.pre-etc ]
@@ -43,7 +43,7 @@ if [ "$line" = Y ] || [ "$line" = y ]; then
     then
         echo "\033[0;34m"'\nDo you want to install oh-my-zsh? (Y/N) (yes)'"\033[0m"
         read line
-        if [ "$line" = Y ] || [ "$line" = y ]; then
+        if [ "$line" = Y ] || [ "$line" = y ] || [ "$line" = "" ]; then
             git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
         fi
     fi
@@ -51,7 +51,7 @@ fi
 
 echo "\033[0;34m"'Do you want to install git configuration? (Y/N) (yes)'"\033[0m"
 read line
-if [ "$line" = Y ] || [ "$line" = y ]; then
+if [ "$line" = Y ] || [ "$line" = y ] || [ "$line" = "" ]; then
 
     echo "\033[0;32m"'\nBacking up the current config files.'"\033[0m"
     if [ ! -f $HOME/.gitconfig.pre-etc ]
@@ -68,7 +68,7 @@ fi
 
 echo "\033[0;34m"'Do you want to install tmux configuration? (Y/N) (yes)'"\033[0m"
 read line
-if [ "$line" = Y ] || [ "$line" = y ]; then
+if [ "$line" = Y ] || [ "$line" = y ] || [ "$line" = "" ]; then
 
     echo "\033[0;32m"'\nBacking up the current config files.'"\033[0m"
     if [ ! -f $HOME/.tmux.conf.pre-etc ]
@@ -85,7 +85,7 @@ fi
 
 echo "\033[0;34m"'Do you want to install Xresources file? (Y/N) (yes)'"\033[0m"
 read line
-if [ "$line" = Y ] || [ "$line" = y ]; then
+if [ "$line" = Y ] || [ "$line" = y ] || [ "$line" = "" ]; then
 
     echo "\033[0;32m"'\nBacking up the current config files.'"\033[0m"
     if [ ! -f $HOME/.Xresources.pre-etc ]
