@@ -12,7 +12,7 @@ then
   rm -rf $HOME/.etc
 fi
 
-sh $SCRIPT_DIRECTORY/make_symlinks.sh
+sh $SCRIPT_DIRECTORY/remove_symlinks.sh
 
 echo "Thanks for trying out etc. It's been uninstalled."
 
