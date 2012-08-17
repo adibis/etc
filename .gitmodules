@@ -1,3 +1,6 @@
 [submodule "bin/pbrisbrin"]
 	path = bin/pbrisbrin
 	url = https://github.com/pbrisbin/scripts
+[submodule "vim"]
+	path = vim
+	url = https://github.com/adibis/.vim.git
