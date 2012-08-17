@@ -1,0 +1,16 @@
+#!/bin/sh
+if [ -n "$1" ]; then
+        url="$1"
+else
+        printf "Error: You must pass a URL as an argument\n"
+        exit
+fi
+
+tinyurl=$(curl http://tinyurl.com/api-create.php?url=${url} 2> /dev/null)
+printf $tinyurl;
+printf "\n";
+if `which xclip` 2> /dev/null
+then
+    printf $tinyurl | xclip -selection clipboard -i;
+    printf "\n";
+fi

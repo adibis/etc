@@ -1,0 +1,3 @@
+[submodule "bin/pbrisbrin"]
+	path = bin/pbrisbrin
+	url = https://github.com/pbrisbin/scripts

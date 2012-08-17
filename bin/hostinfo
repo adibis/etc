@@ -1,0 +1,15 @@
+#!/bin/sh
+printf '\033[0;33m%s\033[0m\n' '****************************************';
+printf '\033[0;33m%s\033[0m\n' 'SYSTEM STATUS:';
+printf '\033[0;32m%s\033[0m' 'OS: '; uname -sr | awk '{print $1,$2}';
+printf '\033[0;32m%s\033[0m' 'Platform: '; uname -m;
+printf '\033[0;32m%s\033[0m' 'Time: '; date +'%H:%M:%S (%d/%m/%Y)';
+printf '\033[0;32m%s\033[0m' 'Uptime: '; uptime | awk '{print $3,$4,$5}';
+printf '\033[0;32m%s\033[0m' 'IP '; ifconfig eth0 | grep 'inet addr:' | awk '{print $2}';
+printf '\033[0;32m%s\033[0m' 'Hostname: '; uname -n;
+printf '\033[0;33m%s\033[0m\n' '****************************************';
+printf '\033[0;33m%s\033[0m\n' 'SYSTEM USAGE:';
+printf '\033[0;32m%s\033[0m' 'Load: '; uptime | awk '{print $10,$11,$12}';
+printf '\033[0;32m%s\033[0m' 'Memory: '; free -m | grep 'cache:' | awk '{print $3,"mb used,",$4,"mb free"}';
+printf '\033[0;32m%s\033[0m' 'Tasks: '; ps -A | wc -l;
+printf '\033[0;33m%s\033[0m\n' '****************************************';
