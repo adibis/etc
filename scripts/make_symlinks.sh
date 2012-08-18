@@ -102,7 +102,7 @@ if [ "$line" = Y ] || [ "$line" = y ] || [ "$line" = "" ]; then
     fi
 
     printf "\033[0;32m"'\nInstalling new config files.\n'"\033[0m"
-	ln -sv $ROOT_DIRECTORY/xterm/Xresources $HOME/.Xresources
-	ln -sv $ROOT_DIRECTORY/xterm/Xresources $HOME/.Xdefaults
+	ln -sv $ROOT_DIRECTORY/X/Xresources $HOME/.Xresources
+	ln -sv $ROOT_DIRECTORY/X/Xresources $HOME/.Xdefaults
 
 fi
