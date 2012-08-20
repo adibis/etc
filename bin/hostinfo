@@ -108,7 +108,7 @@ echo -e "$(tput setaf 6)       #$(tput setaf 4)######   #######$(tput setaf 6)  
 echo -e "$(tput setaf 4)     .######;     ;####;'.      $(tput setaf 6)Desktop Environment: $(tput setaf 7)"$DESKTOP_SESSION
 echo -e "$(tput setaf 4)    .#######;     ;#####.       $(tput setaf 6)Shell: $(tput setaf 7)"$SHELL
 echo -e "$(tput setaf 4)    #########.   .########'     $(tput setaf 6)Terminal: $(tput setaf 7)"$TERM
-echo -e "$(tput setaf 4)   ######'           '######    $(tput setaf 6)Display Manager: $(tput setaf 7)"$DM_NAME
+echo -e "$(tput setaf 4)   ######'           '######    $(tput setaf 6)Battery Status: $(tput setaf 4)"`acpi | awk '{print $3}'`"$(tput setaf 1) "`acpi | awk '{print $4}'`"$(tput setaf 2) "`acpi | awk '{print $5}'`
 #Packages: $(tput setaf 7)`pacman -Qqi | grep Name | grep -c '[^[:space:]]'`
 echo -e "$(tput setaf 4)  ;####                 ####;   $(tput setaf 6)CPU: $(tput setaf 7)"`cat /proc/cpuinfo | grep "model name" | sed 's/^.*: //' | head -n 1`
 echo -e "$(tput setaf 4)  ##'                     '##   $(tput setaf 6)RAM: $(tput setaf 2)"`free -h | grep Mem: | awk '{print $3}'` "$(tput setaf 1)/" `free -h | grep Mem: | awk '{print $2}'`
