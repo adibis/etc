@@ -1,0 +1,34 @@
+#!/bin/sh
+
+SRC_DIR=`pwd`
+IS_INTERACTIVE=0
+
+REPO_DIRS=( */ );
+
+
+echo "This script will update all the git repositories under the current directory."
+echo "Do you want to select which repositories to update? (Y/N) (no)"
+
+read line
+if [ "$line" = Y ] || [ "$line" = y ]; then
+    let IS_INTERACTIVE=1
+fi
+
+echo ":: Starting source update..."
+
+for DIR in ${REPO_DIRS[@]}; do
+    if [ -d $SRC_DIR/$DIR/.git ]; then
+        if [ $IS_INTERACTIVE == 0 ]; then
+            echo ">  $(echo Updating $DIR| sed s'/\///')"
+            cd $SRC_DIR/$DIR; git pull
+        else
+            echo "Do you want to update" $DIR "? (Y/N) (no)"
+            read answer
+            if [ "$answer" = Y ] || [ "$answer" = y ]; then
+                echo ">  $(echo Updating $DIR| sed s'/\///')"
+                cd $SRC_DIR/$DIR; git pull
+            fi
+        fi
+    fi
+done
+exit
