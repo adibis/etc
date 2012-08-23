@@ -5,6 +5,8 @@ IS_INTERACTIVE=0
 
 REPO_DIRS=( */ );
 
+# TODO: Sometimes the git pull won't work if the target branch is not specified.
+# Find a way around that so that the pull operation always works.
 
 echo "This script will update all the git repositories under the current directory."
 echo "Do you want to select which repositories to update? (Y/N) (no)"
