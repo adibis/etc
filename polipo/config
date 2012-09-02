@@ -1,0 +1,44 @@
+daemonise=false
+diskCacheRoot=/var/cache/polipo/
+
+proxyAddress=127.0.0.1
+proxyName=localhost
+allowedClients=127.0.0.1
+cacheIsShared=false
+
+serverSlots=4
+serverSlots1=4
+serverMaxSlots=8
+maxConnectionAge=5m
+
+pipelineAdditionalRequests=maybe
+smallRequestTime=60s
+
+disableLocalInterface=false
+disableConfiguration=false
+disableIndexing=false
+disableServersList=false
+
+relaxTransparency=maybe
+mindlesslyCacheVary=true
+dontCacheRedirects=true
+
+dnsGethostbynameTtl=0
+dnsNegativeTtl=0
+dnsUseGethostbyname=happily
+
+diskCacheUnlinkTime=60d
+diskCacheTruncateTime=7d
+diskCacheTruncateSize=10485760 # 10 MB
+diskCacheWriteoutOnClose=1048576 # 1 MB
+
+maxAge=1d
+maxNoModifiedAge=1d
+maxExpiresAge=60d
+
+# The following option is not described properly in the documentation
+# I guess it means fraction of the time between today and the time when it was last modified.
+# So, if a document was last modified 10 days from today, it would be present in the cache for 10 days
+# if the object has no Expires header.
+
+maxAgeFraction=1
