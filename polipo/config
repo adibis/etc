@@ -30,7 +30,15 @@ dnsUseGethostbyname=happily
 diskCacheUnlinkTime=60d
 diskCacheTruncateTime=7d
 diskCacheTruncateSize=10485760 # 10 MB
-diskCacheWriteoutOnClose=1048576 # 1 MB
+
+##################################################################
+#                                                                #
+# This setting caused 503 couldn't allocate object errors for me.#
+# Changing it to default helped.                                 #
+#                                                                # 
+##################################################################
+
+#diskCacheWriteoutOnClose=1048576 # 1 MB
 
 maxAge=1d
 maxNoModifiedAge=1d
