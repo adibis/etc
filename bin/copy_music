@@ -12,12 +12,16 @@ if [ -z "$1" ]; then
 fi
 
 PLAYLIST="$1"
-
-# TODO: The Create a directory for each class of music and put the songs in that. This can be done by parsing for the first '/' and creating directory with the result.
+IFS="/"
 
 cat $PLAYLIST | while read LINE
 do
-       cp "$MUSIC_DIR$LINE" ./
+    set -- $LINE
+    array=($@)
+    if [ ! -d "${array[0]}" ]; then
+        mkdir "${array[0]}"
+    fi
+    cp "$MUSIC_DIR$LINE" ./"${array[0]}"/
 done
 
 
