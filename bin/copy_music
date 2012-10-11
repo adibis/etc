@@ -4,12 +4,23 @@
 # playlist into the current directory. It also creates directories for appropriate
 # music groups
 
-MUSIC_DIR='/home/aditya/Music/'
+#TODO: Parse MPD config file to determine the music directory. It may not be '~/Music' for everyone.
+MUSIC_DIR='$HOME/Music/'
+
+usage_help () {
+    cat << EOF
+        usage: $0 playlist_file
+
+EOF
+}
+
 
 if [ -z "$1" ]; then
 	echo "ERROR: Bad arguments"
+    usage_help
 	exit 1
 fi
+
 
 PLAYLIST="$1"
 IFS="/"
@@ -23,5 +34,3 @@ do
     fi
     cp "$MUSIC_DIR$LINE" ./"${array[0]}"/
 done
-
-
