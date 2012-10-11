@@ -1,0 +1,23 @@
+#!/bin/sh
+
+# This script parses an m3u playlist file and then copies all the files from that
+# playlist into the current directory. It also creates directories for appropriate
+# music groups
+
+MUSIC_DIR='/home/aditya/Music/'
+
+if [ -z "$1" ]; then
+	echo "ERROR: Bad arguments"
+	exit 1
+fi
+
+PLAYLIST="$1"
+
+# TODO: The Create a directory for each class of music and put the songs in that. This can be done by parsing for the first '/' and creating directory with the result.
+
+cat $PLAYLIST | while read LINE
+do
+       cp "$MUSIC_DIR$LINE" ./
+done
+
+
