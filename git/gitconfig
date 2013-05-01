@@ -63,3 +63,6 @@
     enabled = 1
 [branch]
     autosetuprebase = always
+[core]
+    excludesfile = ~/.cvsignore
+    # echo tags >> ~/.cvsignore
