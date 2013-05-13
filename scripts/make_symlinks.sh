@@ -47,7 +47,18 @@ if [ "$line" = Y ] || [ "$line" = y ] || [ "$line" = "" ]; then
             git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
         fi
     fi
+
+    if [ -d $ZSH ]
+    then
+        printf "\033[0;34m"'\nDo you want to install fish-shell style highlighting? (Y/N) (yes)'"\033[0m"
+        read line
+        if [ "$line" = Y ] || [ "$line" = y ] || [ "$line" = "" ]; then
+            mkdir -p $ZSH/custom/plugins
+            git clone git://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH/custom/plugins/
+        fi
+    fi
 fi
+
 
 printf "\033[0;34m"'\nDo you want to install git configuration? (Y/N) (yes)'"\033[0m"
 read line
