@@ -28,7 +28,8 @@ CDROMREADERSYNTAX=cdparanoia
 
 # Give the location of the ripping program and pass any extra options:
 CDPARANOIA=cdparanoia
-CDPARANOIAOPTS="--never-skip=40"
+#CDPARANOIAOPTS="--never-skip=40"
+CDPARANOIAOPTS="--abort-on-skip --batch --force-read-speed 16"
 
 # Give the location of the CD identification program:
 CDDISCID=cd-discid
@@ -62,7 +63,7 @@ mungefilename ()
 }
 
 # What extra options?
-MAXPROCS=2                              # Run a few encoders simultaneously
+MAXPROCS=1                              # Run a few encoders simultaneously
 PADTRACKS=y                             # Makes tracks 01 02 not 1 2
 EXTRAVERBOSE=y                          # Useful for debugging
 EJECTCD=y                               # Please eject cd when finished :-)

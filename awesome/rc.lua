@@ -44,7 +44,7 @@ end
 beautiful.init(os.getenv("HOME") .. "/.config/awesome/theme/onecolor.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "urxvt"
+terminal = "xterm"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -94,8 +94,8 @@ end
 -- {{{ Tags
 -- Define a tag table which hold all screen tags.
 tags = {
-    names = { "1:main", "2:im", "3:www", "4:email", "5:win", "6:foo", "7:bar" },
-    layouts = { layouts[2], layouts[1], layouts[2], layouts[1], layouts[2], layouts[2], layouts[2] }
+    names = { "1:main", "2:gvim", "3:www", "4:email", "5:movie", "6:photo", "7:foo" },
+    layouts = { layouts[2], layouts[2], layouts[2], layouts[2], layouts[2], layouts[2], layouts[2] }
 }
 tags2 = {
     names = { "nil" },
@@ -207,7 +207,7 @@ volwidget:buttons(awful.util.table.join(
     awful.button({ }, 1, function () awful.util.spawn("pavol ! &") end),
     awful.button({ }, 4, function () awful.util.spawn("pavol + &") end),
     awful.button({ }, 5, function () awful.util.spawn("pavol - &") end)
-))
+    ))
 
 -- wifi icon
 wifiicon = wibox.widget.imagebox()
