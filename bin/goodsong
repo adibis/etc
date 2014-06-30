@@ -47,7 +47,7 @@ set_config() {
   # mpd_config="$HOME/.mpd/mpd.conf"
   # [[ -n "$mpd_config" ]] && return 0
 
-  mpd_config='/etc/mpd.conf'
+  mpd_config='/home/aditya/.config/mpd/mpd.conf'
   [[ -n "$mpd_config" ]] && return 0
 
   return 1
