@@ -1,8 +1,8 @@
 [user]
     name = Aditya Shevade
     email = aditya.shevade@gmail.com
-    editor = gvim
-    signingkey = 7B0FE9E5
+    editor = nvim
+    signingkey =
 
 [color]
     diff = auto
@@ -64,5 +64,3 @@
 [branch]
     autosetuprebase = always
 [core]
-    excludesfile = ~/.cvsignore
-    # echo tags >> ~/.cvsignore
