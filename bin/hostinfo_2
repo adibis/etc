@@ -76,11 +76,15 @@ hspaceu=$(df --total -h | grep home | awk '{print $3}')
 hspacet=$(df --total -h | grep home | awk '{print $2}')
 hspacep=$(df --total -h | grep home | awk '{print $5}' | cut -f 1 -d "%")
 
+nspaceu=$(df --total -h | grep sdb1 | awk '{print $3}')
+nspacet=$(df --total -h | grep sdb1 | awk '{print $2}')
+nspacep=$(df --total -h | grep sdb1 | awk '{print $5}' | cut -f 1 -d "%")
+
 if [ $rspacep -gt 90 ]; then
     f3=$'\e[1;31m'
 else
     if [ $rspacep -gt 75 ]; then
-        f4=$'\e[1;33m'
+        f3=$'\e[1;33m'
     else
         f3=$'\e[1;32m'
     fi
@@ -94,6 +98,18 @@ else
     else
         f4=$'\e[1;32m'
     fi
+fi
+
+if [[ $nspacep == ?(-)+([0-9]) ]]; then
+  if [ $nspacep -gt 90 ]; then
+      f6=$'\e[1;31m'
+  else
+      if [ $nspacep -gt 75 ]; then
+          f6=$'\e[1;33m'
+      else
+          f6=$'\e[1;32m'
+      fi
+  fi
 fi
 
 if [ $RAMp -gt 6000 ]; then
@@ -128,7 +144,6 @@ fi
 cat << EOF
 
 
-
     ${c00}▉▉  |
     ${c08}  ▉▉| ${f1}OS ${f0}........... $f2$system
     ${c01}▉▉  | ${f1}user ${f0}......... $f2$USER@$HOSTNAME
@@ -144,8 +159,7 @@ cat << EOF
     ${c06}▉▉  | ${f1}battery ${f0}...... $f6$battstat $battper $f2$battremain
     ${c14}  ▉▉| ${f1}cpu ${f0}.......... $f2$CPU
     ${c07}▉▉  | ${f1}ram ${f0}.......... ${f5}$RAM $f2/ $RAMf
-    ${c15}  ▉▉| ${f1}disk ${f0}......... ${f2}root: $f3$rspaceu $f2/ $rspacet, home: $f4$hspaceu $f2/ $hspacet
-
+    ${c15}  ▉▉| ${f1}disk ${f0}......... ${f2}root: $f3$rspaceu $f2/ $rspacet, home: $f4$hspaceu $f2/ $hspacet, aux: $f6$nspaceu $f2/ $nspacet
 
 
 EOF
