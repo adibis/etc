@@ -16,9 +16,9 @@ EOF
 
 
 if [ -z "$1" ]; then
-	echo "ERROR: Bad arguments"
+  echo "ERROR: Bad arguments"
     usage_help
-	exit 1
+  exit 1
 fi
 
 
