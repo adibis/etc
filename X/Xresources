@@ -1,59 +1,112 @@
-! Colors
-*background:                    #262626
-*foreground:                    #c2c2b0
+! ------------------------------------------------------------
+! Older saner colors - material.
+! Current colorscheme - eqie6
+! ------------------------------------------------------------
 
-! Black
-*color0:   #222222
-*color8:   #454545
+*.foreground: #CCCCCC
+*background: #111111
+!black
+*color0: #222222
+*color8: #666666
+!red
+*color1: #E84F4F
+*color9: #D23D3D
+!green
+*color2: #B7CE42
+*color10: #BDE077
+!yellow
+*color3: #FEA63C
+*color11: #FFE863
+!blue
+*color4: #66A9B9
+*color12: #AACCBB
+!magenta
+*color5: #B7416E
+*color13: #E16A98
+!cyan
+*color6: #6D878D
+*color14: #42717B
+!white
+*color7: #CCCCCC
+*color15: #FFFFFF
 
-! Red
-*color1:   #9E5641
-*color9:   #CC896D
+! --------------------------------------------------------------------------------
+! XTerm Settings
+! --------------------------------------------------------------------------------
+XTerm*faceName: Iosevka Term Light
+XTerm*faceSize: 14
 
-! Green
-*color2:   #6C7E55
-*color10:  #7DB37D
-
-! Yellow
-*color3:   #CAAF2B
-*color11:  #BFB556
-
-! Blue
-*color4:   #4c8ea1
-*color12:  #6bc1d0
-
-! Magenta
-*color5:   #956D9D
-*color13:  #C18FCB
-
-! Cyan
-*color6:   #7C9AA6
-*color14:  #8FADBF
-
-! White
-*color7:   #909090
-*color15:  #FFFFFF
-
-xterm*faceName: Fantasque Sans Mono
-xterm*faceSize: 14
-
-xterm*dynamicColors:true
-xterm*utf8:2
-xterm*shading:40
-xterm*eightBitInput:false
-xterm*saveLines:2048
-xterm*scrollTtyKeypress:true
-xterm*scrollTtyOutput:false
-xterm*scrollBar:false
-xterm*rightScrollBar:true
-xterm*transpscrollbar:true
-xterm*jumpScroll:true
-xterm*multiScroll:true
-xterm*toolBar:false
+XTerm*dynamicColors:true
+XTerm*utf8:2
+XTerm*shading:40
+XTerm*eightBitInput:false
+XTerm*saveLines:2048
+XTerm*scrollTtyKeypress:true
+XTerm*scrollTtyOutput:false
+XTerm*scrollBar:false
+XTerm*rightScrollBar:true
+XTerm*transpscrollbar:true
+XTerm*jumpScroll:true
+XTerm*multiScroll:true
+XTerm*toolBar:false
 
 XTerm*pointerColor: white
 XTerm*pointerColorBackground: black
 XTerm*cursorColor: yellow
 XTerm*cursorBlink: true
+
+! --------------------------------------------------------------------------------
+! URxvt Settings
+! --------------------------------------------------------------------------------
+URxvt.intensityStyles:  false
+URxvt.background:       [50]#111111
+URxvt.depth:        32
+URxvt.font:         xft:Iosevka Term Medium:size=12
+URxvt.scrollBar:    false
+URxvt.cursorColor:  white
+URxvt.perl-ext-common:  default,matcher,resize-font
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button:   1
+URxvt.resize-font.smaller:  C-Down
+URxvt.resize-font.bigger:   C-Up
+
+URxvt.colorUL:      #4682B4
+
+! --------------------------------------------------------------------------------
+! XFT settings.
+! --------------------------------------------------------------------------------
+Xft.dpi:        96
+Xft.antialias:  true
+Xft.rgba:       rgb
+Xft.hinting:    true
+Xft.hintstyle:  hintslight
+Xft.autohint:   false
+Xft.lcdfilter:  lcddefault
+
+! --------------------------------------------------------------------------------
+! rofi launcher settings
+! --------------------------------------------------------------------------------
+! Enable the extended coloring options
+rofi.color-enabled: true
+!                  bg       border   separator
+rofi.color-window: #282828, #a89984, #a89984
+!                  bg       fg       bg-alt   hl-bg    hl-fg
+rofi.color-normal: #282828, #ebdbb2, #32302f, #665c54, #fbf1c7
+rofi.color-active: #d79921, #282828, #d79921, #fabd2f, #282828
+rofi.color-urgent: #cc241d, #282828, #cc241d, #fb4934, #282828
+
+rofi.separator-style: solid
+rofi.sidebar-mode: true
+rofi.bw: 1
+rofi.columns: 1
+rofi.padding: 16
+
+rofi.yoffset: 0
+rofi.fake-transparency: false
+rofi.location: 0
+rofi.width: 50
+rofi.font: Iosevka Term Medium 18
+rofi.lines: 5
+rofi.fixed-num-lines: true
 
 ! vim: et sw=2 syn=xdefaults

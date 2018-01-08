@@ -1,0 +1,19 @@
+#!/bin/bash
+EXTERNAL_OUTPUT="DP1"
+INTERNAL_OUTPUT="LVDS1"
+
+monitor_mode=$1
+
+echo "$monitor_mode"
+
+if [ $monitor_mode = "EXTERNAL" ]; then
+        xrandr --output $INTERNAL_OUTPUT --off --output $EXTERNAL_OUTPUT --auto
+elif [ $monitor_mode = "INTERNAL" ]; then
+        xrandr --output $INTERNAL_OUTPUT --auto --output $EXTERNAL_OUTPUT --off
+elif [ $monitor_mode = "CLONE" ]; then
+        xrandr --output $INTERNAL_OUTPUT --auto --output $EXTERNAL_OUTPUT --auto --same-as $INTERNAL_OUTPUT
+elif [ $monitor_mode = "ALL" ]; then
+        xrandr --output $INTERNAL_OUTPUT --auto --output $EXTERNAL_OUTPUT --auto --rigt-of $INTERNAL_OUTPUT
+else
+        xrandr --output $INTERNAL_OUTPUT --off --output $EXTERNAL_OUTPUT --auto
+fi
