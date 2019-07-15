@@ -3,7 +3,7 @@
 ! Current colorscheme - eqie6
 ! ------------------------------------------------------------
 
-*.foreground: #CCCCCC
+*foreground: #CCCCCC
 *background: #111111
 !black
 *color0: #222222
@@ -59,9 +59,11 @@ XTerm*cursorBlink: true
 ! URxvt Settings
 ! --------------------------------------------------------------------------------
 URxvt.intensityStyles:  false
-URxvt.background:       [50]#111111
+URxvt.background:       [95]#111111
+URxvt.fading:       50
 URxvt.depth:        32
-URxvt.font:         xft:Iosevka Term Medium:size=12
+URxvt.font:         xft:Iosevka Nerd Font:size=11
+URxvt.letterSpace: 0
 URxvt.scrollBar:    false
 URxvt.cursorColor:  white
 URxvt.perl-ext-common:  default,matcher,resize-font
@@ -88,21 +90,23 @@ Xft.lcdfilter:  lcddefault
 ! --------------------------------------------------------------------------------
 ! Enable the extended coloring options
 rofi.color-enabled: true
-!                  bg       border   separator
-rofi.color-window: #282828, #a89984, #a89984
-!                  bg       fg       bg-alt   hl-bg    hl-fg
-rofi.color-normal: #282828, #ebdbb2, #32302f, #665c54, #fbf1c7
-rofi.color-active: #d79921, #282828, #d79921, #fabd2f, #282828
-rofi.color-urgent: #cc241d, #282828, #cc241d, #fb4934, #282828
+!                  bg         border     separator
+rofi.color-window: #D0282828, #D0a89984, #D0a89984
+!                  bg         fg         bg-alt     hl-bg      hl-fg
+rofi.color-normal: #D0282828, #ffebdbb2, #D0282828, #D0fea63c, #fffbf1c7
+rofi.color-active: #D0e16a98, #ff282828, #D0e16a98, #D0fabd2f, #ff282828
+rofi.color-urgent: #D0cc241d, #ff282828, #D0cc241d, #D0fb4934, #ff282828
 
-rofi.separator-style: solid
+!rofi.theme: purple
+
+rofi.separator-style: none
 rofi.sidebar-mode: true
 rofi.bw: 1
 rofi.columns: 1
 rofi.padding: 16
 
 rofi.yoffset: 0
-rofi.fake-transparency: false
+rofi.fake-transparency: true
 rofi.location: 0
 rofi.width: 50
 rofi.font: Iosevka Term Medium 18
