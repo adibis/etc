@@ -1,0 +1,38 @@
+source ~/.etc/antigen/antigen.zsh
+
+export VISUAL=/usr/bin/nvim
+export EDITOR=/usr/bin/nvim
+export TERM=xterm-256color
+
+HISTFILE=$HOME/.zsh_history
+HISTSIZE=5000
+SAVEHIST=1000
+
+# for tmux: export 256color
+[ -n "$TMUX" ] && export TERM=screen-256color
+
+
+#-------------------
+# Personnal Aliases
+#-------------------
+
+if [ -d $HOME/.alias.d ]; then
+    for x in $HOME/.alias.d/* ; do
+        test -f "$x" || continue
+        source "$x"
+    done
+fi
+
+
+#-------------------------------------------------------------
+# File & string-related functions:
+#-------------------------------------------------------------
+
+if [ -d $HOME/.function.d ]; then
+    for x in $HOME/.function.d/* ; do
+        test -f "$x" || continue
+        source "$x"
+    done
+fi
+
+antigen init ~/.antigenrc
